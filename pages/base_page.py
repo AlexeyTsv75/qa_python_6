@@ -33,3 +33,9 @@ class BasePage:
         locator_x = [method, locator]
         return locator_x
 
+    def check_answer(self, result, expected):
+        return result == expected
+
+    def roll_to_locator(self, locator):
+        element = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)

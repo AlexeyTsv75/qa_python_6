@@ -11,3 +11,27 @@ class FaqAnswers:
     FAQ_ANSWER_5 = "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится."
     FAQ_ANSWER_6 = "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои."
     FAQ_ANSWER_7 = "Да, обязательно. Всем самокатов! И Москве, и Московской области."
+
+
+class UserSet:
+    NAME_1 = "Вася"
+    FAMILY_1 = "Иванов"
+    ADDRESS_1 = "Москва"
+    METRO_1 = "Сокольники"
+    PHONE_1 = "+79011234567"
+    DATE_1 = "01.03.2024"
+    TERM_1 = "сутки"
+    COLOR_1 = "grey"
+    COMMENT_1 = "быстрее"
+    SET_USER_1 = (NAME_1, FAMILY_1, ADDRESS_1, METRO_1, PHONE_1, DATE_1, TERM_1, COLOR_1, COMMENT_1)
+    NAME_2 = "Иван"
+    FAMILY_2 = "Петров"
+    ADDRESS_2 = "Питер"
+    METRO_2 = "Лубянка"
+    PHONE_2 = "+79011234576"
+    DATE_2 = "21.03.2024"
+    TERM_2 = "двое суток"
+    COLOR_2 = "black"
+    COMMENT_2 = "медленнее"
+    SET_USER_2 = (NAME_2, FAMILY_2, ADDRESS_2, METRO_2, PHONE_2, DATE_2, TERM_2, COLOR_2, COMMENT_2)
+
