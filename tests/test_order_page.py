@@ -25,18 +25,7 @@ class TestOrderPage:
                                 comment):
         order_page = OrderPage(driver)
         order_page.get_url(order_page.enter_order_page(OrderPageLocator.UPPER_ORDER_BUTTON))
-        result = order_page.fill_out_order_form(OrderPageLocator.FIELD_NAME, name, OrderPageLocator.FIELD_FAMILY,
-                                                family,
-                                                OrderPageLocator.FIELD_ADDRESS, address, OrderPageLocator.FIELD_METRO,
-                                                OrderPageLocator.METRO_NAME, metro_name, OrderPageLocator.FIELD_PHONE,
-                                                phone,
-                                                OrderPageLocator.FORWARD_BUTTON, OrderPageLocator.FIELD_DATE, date,
-                                                OrderPageLocator.FIELD_TERM, OrderPageLocator.DURATION_LIST,
-                                                duration_name,
-                                                OrderPageLocator.COLOR_CHOOSE, color, OrderPageLocator.FIELD_COMMENT,
-                                                comment, OrderPageLocator.LIST_ORDER_BUTTON,
-                                                OrderPageLocator.ORDER_CONFIRMATION_BUTTON,
-                                                OrderPageLocator.CHECK_STATUS_BUTTON, OrderPageLocator.FILLED_NAME,
-                                                OrderPageLocator.CHOSEN_DATE)
+        result = order_page.fill_out_order_form(name, family, address, metro_name, phone, date, duration_name, color,
+                                                comment)
         expected_result = name
         assert order_page.check_answer(result, expected_result)

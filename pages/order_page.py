@@ -1,7 +1,6 @@
-from selenium.webdriver.common.by import By
-
 import data
 from locators.main_page_locators import MainPageLocator
+from locators.order_page_locators import OrderPageLocator
 from pages.base_page import BasePage
 
 
@@ -13,24 +12,21 @@ class OrderPage(BasePage):
         current_url = self.driver.current_url
         return current_url
 
-    def fill_out_order_form(self, name_locator, name, family_locator, family, address_locator, address, field_metro,
-                            metro_locator, metro_name, phone_locator, phone, forward_locator, date_locator, date,
-                            term_locator, duration_locator, duration_name, color_locator, color, comment_locator,
-                            comment, order_button, confirm_button, confirm_status, filled_name, chosen_date):
-        self.set_text_to_element(name_locator, name)
-        self.set_text_to_element(family_locator, family)
-        self.set_text_to_element(address_locator, address)
-        self.click_on_element(field_metro)
-        self.click_on_element(self.change_locator_data(metro_locator, metro_name))
-        self.set_text_to_element(phone_locator, phone)
-        self.click_on_element(forward_locator)
-        self.set_text_to_element(date_locator, date)
-        self.click_on_element(chosen_date)
-        self.click_on_element(term_locator)
-        self.click_on_element(self.change_locator_data(duration_locator, duration_name))
-        self.click_on_element(self.change_locator_data(color_locator, color))
-        self.set_text_to_element(comment_locator, comment)
-        self.click_on_element(order_button)
-        self.click_on_element(confirm_button)
-        self.click_on_element(confirm_status)
-        return self.get_text_from_element(filled_name)
+    def fill_out_order_form(self, name, family, address, metro_name, phone, date, duration_name, color, comment):
+        self.set_text_to_element(OrderPageLocator.FIELD_NAME, name)
+        self.set_text_to_element(OrderPageLocator.FIELD_FAMILY, family)
+        self.set_text_to_element(OrderPageLocator.FIELD_ADDRESS, address)
+        self.click_on_element(OrderPageLocator.FIELD_METRO)
+        self.click_on_element(self.change_locator_data(OrderPageLocator.METRO_NAME, metro_name))
+        self.set_text_to_element(OrderPageLocator.FIELD_PHONE, phone)
+        self.click_on_element(OrderPageLocator.FORWARD_BUTTON)
+        self.set_text_to_element(OrderPageLocator.FIELD_DATE, date)
+        self.click_on_element(OrderPageLocator.CHOSEN_DATE)
+        self.click_on_element(OrderPageLocator.FIELD_TERM)
+        self.click_on_element(self.change_locator_data(OrderPageLocator.DURATION_LIST, duration_name))
+        self.click_on_element(self.change_locator_data(OrderPageLocator.COLOR_CHOOSE, color))
+        self.set_text_to_element(OrderPageLocator.FIELD_COMMENT, comment)
+        self.click_on_element(OrderPageLocator.LIST_ORDER_BUTTON)
+        self.click_on_element(OrderPageLocator.ORDER_CONFIRMATION_BUTTON)
+        self.click_on_element(OrderPageLocator.CHECK_STATUS_BUTTON)
+        return self.get_text_from_element(OrderPageLocator.FILLED_NAME)

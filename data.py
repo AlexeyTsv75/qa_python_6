@@ -1,5 +1,7 @@
 MAIN_PAGE_URL = "https://qa-scooter.praktikum-services.ru"
 ORDER_PAGE_URL = "/order"
+SAMOKAT = "Самокат"
+DZEN_HEADER = 'dzen-header'
 
 
 class FaqAnswers:
@@ -23,7 +25,6 @@ class UserSet:
     TERM_1 = "сутки"
     COLOR_1 = "grey"
     COMMENT_1 = "быстрее"
-    SET_USER_1 = (NAME_1, FAMILY_1, ADDRESS_1, METRO_1, PHONE_1, DATE_1, TERM_1, COLOR_1, COMMENT_1)
     NAME_2 = "Иван"
     FAMILY_2 = "Петров"
     ADDRESS_2 = "Питер"
@@ -33,5 +34,5 @@ class UserSet:
     TERM_2 = "двое суток"
     COLOR_2 = "black"
     COMMENT_2 = "медленнее"
-    SET_USER_2 = (NAME_2, FAMILY_2, ADDRESS_2, METRO_2, PHONE_2, DATE_2, TERM_2, COLOR_2, COMMENT_2)
+
 

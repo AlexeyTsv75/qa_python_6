@@ -1,6 +1,5 @@
 import pytest
 from pages.main_page import MainPage
-from locators.main_page_locators import MainPageLocator
 from data import FaqAnswers
 
 
@@ -19,6 +18,5 @@ class TestMainPage:
                              )
     def test_questions(self, driver, x_num, expected_result):
         main_page = MainPage(driver)
-        result = main_page.click_to_question_and_get_answer_text(MainPageLocator.QUESTION_LOCATOR,
-                                                                 MainPageLocator.ANSWER_LOCATOR, x_num)
+        result = main_page.click_to_question_and_get_answer_text(x_num)
         assert main_page.check_answer(result, expected_result)
